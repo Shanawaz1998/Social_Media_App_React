@@ -1,13 +1,22 @@
+import Footer from "./components/Footer";
+import Header from "./components/Header";
+import SideBar from "./components/SideBar";
+import "./App.css";
+import CreatePost from "./components/CreatePost";
+import PostList from "./components/PostList";
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-// import "./App.css";
 
 function App() {
+  const [selectedTab, setSelectedTab] = useState("Home");
   return (
-    <>
-      <h1>Hello</h1>
-    </>
+    <div className="app-container">
+      <SideBar selectedTab={selectedTab} setSelectedTab={setSelectedTab} />
+      <div className="content">
+        <Header />
+        {selectedTab === "Home" ? <PostList /> : <CreatePost />}
+        <Footer />
+      </div>
+    </div>
   );
 }
 
