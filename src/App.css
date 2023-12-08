@@ -4,3 +4,24 @@
 .content {
   width: 100%;
 }
+.post-body {
+  margin: 20px 50px;
+}
+.hashtag {
+  margin: 0px 5px;
+}
+.reaction {
+  margin: 15px 0px 0px 0px;
+  margin-bottom: 0px;
+}
+.post-form {
+  margin-top: 50px;
+  margin-left: 10%;
+  width: 80%;
+}
+.loading-spinner {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+}
