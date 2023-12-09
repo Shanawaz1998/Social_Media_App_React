@@ -1,54 +1,44 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-export default function SideBar({ selectedTab, setSelectedTab }) {
+export default function SideBar() {
   return (
     <div
       className="d-flex flex-column flex-shrink-0 p-3 text-bg-dark"
       style={{ width: "280px", minHeight: "800px" }}
     >
-      <a
-        href="/"
+      <Link
+        to="/"
         className="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none"
       >
         <svg className="bi pe-none me-2" width="40" height="32">
-          <use xlinkHref="#bootstrap"></use>
+          <use xlinkto="#bootstrap"></use>
         </svg>
         <span className="fs-4">Sidebar</span>
-      </a>
+      </Link>
       <hr />
       <ul className="nav nav-pills flex-column mb-auto">
-        <li className="nav-item" onClick={() => setSelectedTab("Home")}>
-          <a
-            href="#"
-            className={`nav-link text-white ${
-              selectedTab === "Home" && "active"
-            }`}
-            aria-current="page"
-          >
+        <li className="nav-item">
+          <Link to="/" className="nav-link text-white" aria-current="page">
             <svg className="bi pe-none me-2" width="16" height="16">
-              <use xlinkHref="#home"></use>
+              <use xlinkto="#home"></use>
             </svg>
             Home
-          </a>
+          </Link>
         </li>
-        <li onClick={() => setSelectedTab("CreatePost")}>
-          <a
-            href="#"
-            className={`nav-link text-white ${
-              selectedTab === "CreatePost" && "active"
-            }`}
-          >
+        <li>
+          <Link to="/create-post" className="nav-link text-white">
             <svg className="bi pe-none me-2" width="16" height="16">
-              <use xlinkHref="#speedometer2"></use>
+              <use xlinkto="#speedometer2"></use>
             </svg>
             Create Post
-          </a>
+          </Link>
         </li>
       </ul>
       <hr />
       <div className="dropdown">
-        <a
-          href="#"
+        <Link
+          to="#"
           className="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
           data-bs-toggle="dropdown"
           aria-expanded="false"
@@ -61,30 +51,30 @@ export default function SideBar({ selectedTab, setSelectedTab }) {
             className="rounded-circle me-2"
           />
           <strong>mdo</strong>
-        </a>
+        </Link>
         <ul className="dropdown-menu dropdown-menu-dark text-small shadow">
           <li>
-            <a className="dropdown-item" href="#">
+            <Link className="dropdown-item" to="#">
               New project...
-            </a>
+            </Link>
           </li>
           <li>
-            <a className="dropdown-item" href="#">
+            <Link className="dropdown-item" to="#">
               Settings
-            </a>
+            </Link>
           </li>
           <li>
-            <a className="dropdown-item" href="#">
+            <Link className="dropdown-item" to="#">
               Profile
-            </a>
+            </Link>
           </li>
           <li>
             <hr className="dropdown-divider" />
           </li>
           <li>
-            <a className="dropdown-item" href="#">
+            <Link className="dropdown-item" to="#">
               Sign out
-            </a>
+            </Link>
           </li>
         </ul>
       </div>
